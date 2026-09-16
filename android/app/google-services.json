@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "877463268797",
+    "project_id": "resume-analyzer-97015",
+    "storage_bucket": "resume-analyzer-97015.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:877463268797:android:8b32b81c5b30e65414b6d4",
+        "android_client_info": {
+          "package_name": "com.example.resume_analyzer"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAyNLoc0CcI4hR7msWkp3-0MFWc_dvKmjo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
