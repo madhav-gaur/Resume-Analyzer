@@ -25,8 +25,10 @@ class PrimaryButton extends StatelessWidget {
         onPressed: isLoading ? null : onPressed,
         style: ElevatedButton.styleFrom(
           backgroundColor: AppColors.textPrimary,
-          disabledBackgroundColor: AppColors.textDisabled,
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(99)),
+          disabledBackgroundColor: Color(0xFF64748B),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(99),
+          ),
           elevation: 0,
         ),
         child: isLoading
@@ -67,7 +69,7 @@ class SecondaryButton extends StatelessWidget {
         onPressed: isLoading ? null : onPressed,
         style: OutlinedButton.styleFrom(
           backgroundColor: AppColors.background,
-          disabledBackgroundColor: AppColors.textDisabled,
+          disabledBackgroundColor: Color(0xFF64748B),
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
           side: BorderSide(color: AppColors.lightGrey),
           elevation: 0,

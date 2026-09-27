@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:resume_analyzer/theme/app_colors.dart';
-import 'package:resume_analyzer/theme/app_fonts.dart';
 
 class AppTextField extends StatelessWidget {
   final String label;
@@ -27,10 +26,18 @@ class AppTextField extends StatelessWidget {
       obscureText: isPassword,
       keyboardType: keyboardType,
       validator: validator,
-      style: AppFonts.body.copyWith(color: AppColors.textPrimary),
+      style: TextStyle(
+        fontWeight: FontWeight.w400,
+        color: AppColors.textPrimary,
+        fontSize: 17,
+      ),
       decoration: InputDecoration(
         labelText: label,
-        labelStyle: AppFonts.body.copyWith(color: AppColors.textSecondary),
+        labelStyle: TextStyle(
+      fontWeight: FontWeight.w400,
+      color: AppColors.textSecondary,
+      fontSize: 17,
+    ),
         prefixIcon: Icon(prefixIcon, color: AppColors.textSecondary, size: 20),
         filled: true,
         fillColor: AppColors.background,
@@ -55,11 +62,11 @@ class AppTextField extends StatelessWidget {
 
         errorBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8),
-          borderSide: BorderSide(color: AppColors.danger, width: 1.0),
+          borderSide: BorderSide(color: Color(0xFF64748B), width: 1.0),
         ),
         focusedErrorBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8),
-          borderSide: BorderSide(color: AppColors.danger, width: 1.5),
+          borderSide: BorderSide(color: Color(0xFF64748B), width: 1.5),
         ),
       ),
     );

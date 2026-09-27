@@ -26,7 +26,7 @@ class AuthService {
     return user;
   }
 
-  Future<UserCredential?> signin({
+ Future<UserCredential?> signin({
     required String email,
     required String password,
   }) async {
@@ -35,5 +35,5 @@ class AuthService {
       password: password,
     );
     return user;
-  }
+  } 
 }

@@ -5,11 +5,11 @@ import 'package:resume_analyzer/theme/app_colors.dart';
 class AppFonts{
   static const String fontFamily ='Inter';
   
-  static const TextStyle display = TextStyle(
-    fontFamily: fontFamily,
-    fontSize: 32.0,
-    fontWeight: FontWeight.w700
-  );
+  // static const TextStyle display = TextStyle(
+  //   fontFamily: fontFamily,
+  //   fontSize: 32.0,
+  //   fontWeight: FontWeight.w700
+  // );
 
 
   static const TextStyle screenTitle = TextStyle(
@@ -18,23 +18,23 @@ class AppFonts{
     fontWeight: FontWeight.w700,
   );
 
-  static const TextStyle sectionTitle = TextStyle(
-    fontFamily: fontFamily,
-    fontSize: 18.0,
-    fontWeight: FontWeight.w600,
-  );
+  // static const TextStyle sectionTitle = TextStyle(
+  //   fontFamily: fontFamily,
+  //   fontSize: 18.0,
+  //   fontWeight: FontWeight.w600,
+  // );
 
-  static const TextStyle cardTitle = TextStyle(
-    fontFamily: fontFamily,
-    fontSize: 16.0,
-    fontWeight: FontWeight.w600,
-  );
+  // static const TextStyle cardTitle = TextStyle(
+  //   fontFamily: fontFamily,
+  //   fontSize: 16.0,
+  //   fontWeight: FontWeight.w600,
+  // );
 
-  static const TextStyle body = TextStyle(
-    fontFamily: fontFamily,
-    fontSize: 14.0,
-    fontWeight: FontWeight.w400,
-  );
+  // static const TextStyle body = TextStyle(
+  //   fontFamily: fontFamily,
+  //   fontSize: 14.0,
+  //   fontWeight: FontWeight.w400,
+  // );
 
   static const TextStyle caption = TextStyle(
     fontFamily: fontFamily,

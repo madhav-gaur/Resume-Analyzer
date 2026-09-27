@@ -184,8 +184,10 @@ class _SignupState extends State<SignIn> {
                             deleteIcon: Icon(Icons.clear),
                             label: Text(
                               error,
-                              style: AppFonts.body.copyWith(
-                                color: AppColors.danger,
+                              style: TextStyle(
+                                  fontSize: 14.0,
+                                  fontWeight: FontWeight.w400,
+                                color: Color(0xFFEF4444),
                               ),
                             ),
                           ),
