@@ -30,7 +30,7 @@ class CollapsedInputHeader extends StatefulWidget {
 }
 
 class _CollapsedInputHeaderState extends State<CollapsedInputHeader> {
-  late bool _expanded;
+  bool _expanded = false;
 
   @override
   Widget build(BuildContext context) {

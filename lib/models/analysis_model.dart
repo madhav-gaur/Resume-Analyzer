@@ -14,11 +14,14 @@ class CategoryFeedback {
   });
 
   factory CategoryFeedback.fromMap(Map<String, dynamic> map) {
+    final suggestions = map['suggestions'];
+
     return CategoryFeedback(
       score: _toInt(map['score']),
       feedback: map['feedback']?.toString() ?? '',
-      suggestions:
-          map['suggestions'].map((item) => item.toString()).toList() ?? [],
+      suggestions: suggestions is List
+          ? suggestions.map((item) => item.toString()).toList()
+          : const [],
     );
   }
 

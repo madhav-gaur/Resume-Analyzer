@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:resume_analyzer/models/analysis_model.dart';
+import 'package:resume_analyzer/providers/analysis_provider.dart';
 import 'package:resume_analyzer/router/routes.dart';
 import 'package:resume_analyzer/services/ai_sevice.dart';
 import 'package:resume_analyzer/services/analysis_service.dart';
@@ -30,6 +31,7 @@ class _HomeState extends ConsumerState<Home> {
   bool isJobDesc = false;
   String? _analysisId;
   _HomePhase _phase = _HomePhase.idle;
+  bool _restoreInputFromAnalysis = false;
 
   bool get isDisabled => _resumeController.text.trim().isEmpty;
 
@@ -39,6 +41,7 @@ class _HomeState extends ConsumerState<Home> {
     if (widget.analysisId != null) {
       _analysisId = widget.analysisId;
       _phase = _HomePhase.process;
+      _restoreInputFromAnalysis = true;
     }
   }
 
@@ -98,9 +101,27 @@ class _HomeState extends ConsumerState<Home> {
 
   @override
   Widget build(BuildContext context) {
+    final analysisId = _analysisId;
+    if (_restoreInputFromAnalysis && analysisId != null) {
+      ref.listen(analysisProvider(analysisId), (previous, next) {
+        next.whenData((analysis) {
+          if (!mounted || analysis == null || !_restoreInputFromAnalysis) {
+            return;
+          }
+
+          _restoreInputFromAnalysis = false;
+          setState(() {
+            _resumeController.text = analysis.resume;
+            _descriptionController.text = analysis.jobDescription ?? '';
+            isJobDesc = _descriptionController.text.trim().isNotEmpty;
+          });
+        });
+      });
+    }
+
     return Scaffold(
       extendBodyBehindAppBar: true,
-      drawer:  AppDrawer(),
+      drawer: AppDrawer(),
       resizeToAvoidBottomInset: true,
       appBar: AppBar(
         actions: [
